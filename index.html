@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+  </head>
+  <body class="bg-[url('./jeremy-thomas-rMmibFe4czY-unsplash.jpg')] bg-cover bg-center h-100 text-white min-h-screen font-sans">
+
+    
+<nav class="bg-gray-800/80 text-white ">
+  <div class="max-w-9/12 mx-auto px-4 py-8 ms-28 flex ">
+
+    
+    <div class="flex items-center gap-3">
+      
+      <a href="#" style="font-size: 30px;" class=" font-semibold tracking-wide font-stretch-expanded "><img src="https://routeweather.netlify.app/images/logo@2x.png" alt="Weather Logo" class="h-10 w-auto inline"> Weather App</a>
+    </div>
+   
+  </div>
+</nav>
+<section class=" ">
+ <div class="w-10/12 mx-auto px-4 py-20  ">
+   <p id="dayStatus"></p>
+    <div class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 mb-10">
+      <input
+        id="cityInput"
+        type="text"
+        placeholder="Search for a city..."
+        class="w-9/12 my-2 px-5 py-6 rounded-full text-white bg-gray-800/90 outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 text-2xl"
+      />
+      <button
+        id="btn"
+        class="px-14 py-6 bg-blue-600/80 hover:bg-blue-700 rounded-full transition duration-500 text-2xl"
+      >
+        Search
+      </button>
+      <p class="font-bold text-6xl capitalize w-100"></p>
+    </div>
+
+    
+    <div id="forecastCards" class="grid grid-cols-1 md:grid-cols-3 ">
+
+
+    </div>
+  </div>
+</section>
+<script src="script.js"></script>
+
+    
+  </body>
+</html>
