@@ -3,7 +3,18 @@ const forecastCards = document.getElementById('forecastCards');
 const cityInput = document.getElementById('cityInput');
 const cityLabel = btn.nextElementSibling;
 const dayStatus = document.getElementById('dayStatus')
+const loader = document.getElementById('loader');
+
+function showLoader() {
+  loader.classList.remove('hidden');
+}
+
+function hideLoader() {
+  loader.classList.add('hidden');
+}
+
 detectLocation();
+
 
 btn.addEventListener('click', function () {
   const city = cityInput.value;
@@ -23,17 +34,21 @@ function detectLocation() {
 }
 
 async function getWeather(city) {
+  showLoader()
   const apiKey = 'b8fc5ec9d0354f8ba3602328250207';
   const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3`);
   const data = await res.json();
   renderForecast(data);
+  hideLoader()
 }
 
 async function getWeatherByCoords(lat, lon) {
+  showLoader()
   const apiKey = 'b8fc5ec9d0354f8ba3602328250207';
   const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=3`);
   const data = await res.json();
   renderForecast(data);
+  hideLoader()
 }
 
 function renderForecast(data) {
